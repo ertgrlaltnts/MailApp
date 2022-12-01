@@ -1,0 +1,13 @@
+.active {
+  color: #0b57d0;
+  margin-right: 10px;
+}
+
+.disable {
+  color: #000;
+  margin-right: 10px;
+}
+
+.skeleton_inbox {
+  margin-bottom: 5px;
+}

@@ -1,0 +1,81 @@
+@import "antd/dist/antd.css";
+
+@font-face {
+  font-family: "QuickSandBold";
+  src: local("QuickSandBold"),
+    url("./assets/fonts/Quicksand-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "QuickSandRegular";
+  src: local("QuickSandRegular"),
+    url("./assets/fonts/Quicksand-Regular.ttf") format("truetype");
+  font-weight: bold;
+}
+
+body {
+  margin: 0;
+  overflow-x: "Quicksand";
+  background-color: #f6f8fc;
+}
+
+.ant-tooltip-inner {
+  color: #fff;
+  font-family: "QuickSandRegular";
+  font-size: 12px;
+}
+
+.ant-tooltip-placement-bottom .ant-tooltip-arrow {
+  display: none;
+}
+
+.ant-tooltip-placement-bottom,
+.ant-tooltip-placement-bottomLeft,
+.ant-tooltip-placement-bottomRight {
+  padding-top: 0;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.ant-popover-content {
+  font-family: "QuickSandRegular";
+}
+
+.ant-btn-primary {
+  background-color: #0b57d0 !important;
+  border: none !important;
+}
+
+.ant-btn-default {
+  border: none;
+  color: #fff !important;
+  background-color: #faad14;
+}
+
+.ant-btn-default:hover {
+  border: none !important;
+  color: #fff !important;
+  background-color: #faad14;
+}
+
+.ant-btn {
+  width: 60px !important;
+}

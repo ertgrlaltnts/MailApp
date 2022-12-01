@@ -1,0 +1,7 @@
+.git
+.gitignore
+vendor/
+api.dev.yaml.bak
+**/node_modules
+**/build
+node_modules

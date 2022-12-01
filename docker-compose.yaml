@@ -1,0 +1,53 @@
+version: '3.9'
+services:
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - '27017:27017'
+    healthcheck:
+      test:
+        - CMD
+        - mongo
+        - '--eval'
+        - '''db.runCommand("ping").ok'''
+        - 'mongo:27017/test'
+        - '--quiet'
+      timeout: 45s
+      interval: 3s
+      retries: 30
+    networks:
+      - mail_app
+    volumes:
+      - 'mongo_data:/data/db'
+  frontend:
+    container_name: mail_app_frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    restart: on-failure
+    ports:
+      - '8080:3000'
+    depends_on:
+      - backend
+    networks:
+      - mail_app
+  backend:
+    container_name: mail_app_backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: on-failure
+    ports:
+      - '8000:8000'
+    depends_on:
+      - mongo
+    networks:
+      - mail_app
+networks:
+  mail_app:
+    driver: bridge
+volumes:
+  mongo_data: null
